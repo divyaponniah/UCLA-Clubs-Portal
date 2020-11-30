@@ -1,0 +1,9 @@
+/*-----------------------GENERAL CSS------------------------*/
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 64px 32px;
+    min-height: calc(70vmin);
+}
