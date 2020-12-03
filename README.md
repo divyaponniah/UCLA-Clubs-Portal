@@ -10,7 +10,7 @@
 `npm start`
 
 # Backend
-##Create virtual environment
+## Create virtual environment
 ```
 python3 -m venv env
 source env/bin/activate
