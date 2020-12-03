@@ -18,7 +18,9 @@ pip install -r requirements.txt
 ```
 
 ## Run the project
+```
 cd backend
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
+```
