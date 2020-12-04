@@ -24,6 +24,48 @@
     background-color: #0033b6;
     color: white;
 }
+
+.search-container {
+    width: 100%;
+}
+.search_button {
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 3px;
+    margin-left: 16px;
+    border: none;
+    color: white;
+    width: auto;
+}
+.search_button:hover {
+    cursor: pointer;
+    background-color: #eedc79;
+}
+.search_button:focus {
+    outline: none;
+}
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.search input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+    flex-grow: 3;
+}
+
+.button_container {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+}
 .club_list {
     padding: 24px;
 }
@@ -47,17 +89,18 @@
 .club_card p {
     margin: 16px 0px;
 }
-.subscribe_button {
+.button {
     background-color: #0033b6;
     padding: 8px 16px;
     border-radius: 12px;
     border: none;
     color: white;
+    width: auto;
 }
-.subscribe_button:hover {
+.button:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
-.subscribe_button:focus {
+.button:focus {
     outline: none;
 }
