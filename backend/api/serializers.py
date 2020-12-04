@@ -27,14 +27,14 @@ class ClubSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
-    # clubs = serializers.StringRelatedField(many=True)
-    clubs = ClubSerializer(many=True)
     user = serializers.StringRelatedField()
-    # clubs = serializers.HyperlinkedRelatedField(many=True, view_name='club-detail')
+
+    clubs = ClubSerializer(many=True, read_only=True)
+    club_ids = serializers.PrimaryKeyRelatedField(many=True, read_only=False, queryset=Club.objects.all(), source='clubs')
 
     class Meta:
         model = Profile
-        fields = ['url', 'user', 'clubs']
+        fields = ['url', 'user', 'clubs', 'club_ids']
 
 
 
