@@ -38,6 +38,7 @@
     flex-direction: column;
     justify-content: center;
     color: white;
+    animation: slideRight 2.5s forwards;
     display: none;
 }
 .menu_setting {
@@ -102,6 +103,14 @@
 }
 .trash_button:focus {
     outline: none;
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(-80%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 /*-----------------------------CLUBS PAGE---------------------*/
