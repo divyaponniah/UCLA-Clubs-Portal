@@ -12,7 +12,97 @@
     flex-direction: column;
     min-height: calc(70vmin);
 }
+.button {
+    background-color: #0033b6;
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+}
+.button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.button:focus {
+    outline: none;
+}
 
+/*-----------------------MENU---------------------*/
+.menu {
+    position: absolute;
+    background-color: #1488e0;
+    height: 100%;
+    width: 40%;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    display: none;
+}
+.menu_setting {
+    margin: 24px;
+    float: left;
+    margin-right: auto;
+    border: none;
+    color: #5aace9;
+    background-color: #0033b6;
+    top: 0;
+    position: absolute;
+    z-index: 100;
+
+}
+.menu_setting:hover {
+    cursor: pointer;
+    color: #eedc79;
+}
+.menu_setting:focus {
+    outline: none;
+}
+.menu .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 16px 0px;
+}
+.club_link {
+    color: #d0e7f9;
+    width: 100%;
+    margin: 8px 0px;
+    font-size: 18px;
+}
+.menu_button {
+    background-color: #0033b6;
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    width: 100%;
+    font-size: 18px;
+}
+.menu_button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.menu_button:focus {
+    outline: none;
+}
+.trash_button {
+    float: right;
+    margin-left: auto;
+    border: none;
+    color: #5aace9;
+    background-color: #1488e0;
+
+}
+.trash_button:hover {
+    cursor: pointer;
+    color: #0033b6;
+}
+.trash_button:focus {
+    outline: none;
+}
 
 /*-----------------------------CLUBS PAGE---------------------*/
 .searchbar {
@@ -20,7 +110,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 24px;
+    padding: 54px 32px;
+    padding-bottom: 32px;
     background-color: #0033b6;
     color: white;
 }
@@ -88,19 +179,4 @@
 }
 .club_card p {
     margin: 16px 0px;
-}
-.button {
-    background-color: #0033b6;
-    padding: 8px 16px;
-    border-radius: 12px;
-    border: none;
-    color: white;
-    width: auto;
-}
-.button:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-}
-.button:focus {
-    outline: none;
 }

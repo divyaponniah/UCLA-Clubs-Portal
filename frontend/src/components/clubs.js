@@ -1,12 +1,51 @@
 import React from "react";
 import "../styles/layout.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTrash, faCog } from "@fortawesome/free-solid-svg-icons";
 
 export default class clubs extends React.Component {
+    toggleMenu() {
+        var setting = document.getElementsByClassName("menu_setting")[0];
+        var menu = document.getElementsByClassName("menu")[0];
+        if (menu.style.display == "flex")
+        {
+            menu.style.display = "none";
+            setting.style.backgroundColor = "#0033b6";
+        }
+        else
+        {
+            menu.style.display = "flex";
+            setting.style.backgroundColor = "#1488e0";
+        }
+    }
+
   render() {
     return (
       <div className="body_nopadding">
+          <button className="menu_setting" onClick={()=>{this.toggleMenu()}}><FontAwesomeIcon icon={faCog}/></button>
+          <div className="menu">
+            <div className="column">
+                <h1 style={{marginTop: '0px'}}>Name</h1>
+                <button className="menu_button" style={{marginBottom: '16px'}}>Events</button>
+                <button className="menu_button">Club Info</button>
+            </div>
+            <div className="column">
+                <h2>SUBSCRIPTIONS</h2>
+                <div className="club_link">
+                    <a>ACM</a>
+                    <button className="trash_button"><FontAwesomeIcon icon={faTrash}/></button>
+                </div>
+                <div className="club_link">
+                    <a>SWE</a>
+                    <button className="trash_button"><FontAwesomeIcon icon={faTrash}/></button>
+                </div>
+                <div className="club_link">
+                    <a>Bruin Racing</a>
+                    <button className="trash_button"><FontAwesomeIcon icon={faTrash}/></button>
+                </div>
+            </div>
+          </div>
+
           <div className="searchbar">
             <div class="search-container">
                 <form className="search">
