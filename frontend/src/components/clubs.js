@@ -21,7 +21,7 @@ export default class clubs extends React.Component {
 
   render() {
     return (
-      <div className="body_nopadding">
+      <div className="body_nopadding" style={{position: 'relative'}}>
           <button className="menu_setting" onClick={()=>{this.toggleMenu()}}><FontAwesomeIcon icon={faCog}/></button>
           <div className="menu">
             <div className="column">
@@ -44,6 +44,7 @@ export default class clubs extends React.Component {
                     <button className="trash_button"><FontAwesomeIcon icon={faTrash}/></button>
                 </div>
             </div>
+            <a className="link" href="#login" style={{bottom: '0', position: 'absolute', marginBottom: '32px'}}>Log Out</a>
           </div>
 
           <div className="searchbar">
