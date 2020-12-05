@@ -6,7 +6,7 @@ from rest_framework import serializers
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['url', 'username', 'email']
+        fields = ['url', 'pk', 'username', 'email']
 
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
@@ -27,7 +27,7 @@ class ClubSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
-    user = serializers.StringRelatedField()
+    user = UserSerializer(many=False, read_only=True)
 
     clubs = ClubSerializer(many=True, read_only=True)
     club_ids = serializers.PrimaryKeyRelatedField(many=True, read_only=False, queryset=Club.objects.all(), source='clubs')
