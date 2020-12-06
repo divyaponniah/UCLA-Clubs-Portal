@@ -5,12 +5,10 @@
     justify-content: center;
     align-items: center;
     padding: 64px 32px;
-    min-height: calc(70vmin);
 }
 .body_nopadding {
     display: flex;
     flex-direction: column;
-    min-height: calc(70vmin);
 }
 .button {
     background-color: #0033b6;
@@ -199,38 +197,14 @@
 }
 
 /*---------------------LOGIN------------------*/
-.background {
-    position: absolute;
-    width: 1440px;
-    height: 790px;
-    left: 0px;
-    top: 0px;
-
-    background: #1488E0;
-}
-
-.welcomeTxt {
-    position: absolute;
-    width: 811px;
-    height: 70px;
-    left: 390px;
-    top: 30px;
-
+.bodyHeader {
     font-style: Mulish;
     font-weight: bold;
     font-size: 40px;
     line-height: 53px;
-
     color: #FFFFFF;
 }
-
-.logInPortalTxt {
-    position: absolute;
-    width: 308px;
-    height: 44px;
-    left: 583px;
-    top: 185px;
-
+.bodyHeader_1 {
     font-style: Mulish;
     font-weight: bold;
     font-size: 30px;
@@ -239,302 +213,47 @@
 
     color: #FFFFFF;
 }
-
-.emailTxt {
-    position: absolute;
-    width: 66px;
-    height: 31px;
-    left: 440px;
-    top: 251px;
-
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputTxt {
     font-style: Mulish;
-    /*font-weight: bold;*/
     font-size: 20px;
     line-height: 31px;
 
     color: #FFFFFF;
 }
-
-#ip1 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 303px;
-
+.form_input {
     border-radius: 10px;
     border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;    
-
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
-}
-
-.passwordTxt {
-    position: absolute;
-    width: 119px;
-    height: 31px;
-    left: 440px;
-    top: 351px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
-    font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
-}
-
-#ip2 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 403px;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;   
+    padding: 16px 20px; 
+    width: 100%;
     
     font-style: Mulish;
     font-size: 25px;
     line-height: 0px;
 }
-
-#ip3 {
-    position: absolute;
-    width: 629px;
-    height: 180px;
-    left: 630px;
-    top: 510px;
-    
+.form_button {
     background-color: #0033B6;
 
     border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 170px;
-    height: 58px; 
+    border: 0px;
+    padding: 20px 32px; 
+    margin-top: 32px;
     
     font-style: Mulish;
     font-weight: bold;
     font-size: 25px;
-    line-height: 0px;
 
     color: rgba(254, 253, 248, 0.8);;
 }
-
-.registerText {
-    position: absolute;
-    width: 336px;
-    height: 38px;
-    left: 495px;
-    top: 677px;
-
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 38px;
-    /* identical to box height */
-
-    color: #FFFFFF;
+.form_button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
-
-#ib1 {
-    position: absolute;
-    width: 193px;
-    height: 47px;
-    left: 775px;
-    top: 700px;
-
-    background-color: #0033B6;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 155px;
-    height: 40px;
-
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 0px;
-    /* identical to box height */
-
-    color: rgba(254, 253, 248, 0.8);
-}
-
-.createAccountTxt {
-    position: absolute;
-    width: 811px;
-    height: 70px;
-    left: 500px;
-    top: 30px;
-
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 53px;
-
-    color: #FFFFFF;
-}
-
-#ib2 {
-    position: absolute;
-    width: 357px;
-    height: 60px;
-    left: 535px;
-    top: 650px;
-    
-    background-color: #0033B6;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 340px;
-    height: 58px; 
-    
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 0px;
-
-    color: rgba(254, 253, 248, 0.8);;
-}
-
-.firstNameText {
-    position: absolute;
-    width: 119px;
-    height: 31px;
-    left: 440px;
-    top: 150px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
-    font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
-}
-
-#ip5 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 203px;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;   
-    
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
-}
-
-.lastNameText {
-    position: absolute;
-    width: 119px;
-    height: 31px;
-    left: 440px;
-    top: 250px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
-    font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
-}
-
-#ip6 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 303px;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;   
-    
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
-}
-
-.emailText2 {
-    position: absolute;
-    width: 119px;
-    height: 31px;
-    left: 440px;
-    top: 350px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
-    font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
-}
-
-#ip7 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 403px;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;   
-    
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
-}
-
-.passwordText2 {
-    position: absolute;
-    width: 119px;
-    height: 31px;
-    left: 440px;
-    top: 450px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
-    font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
-}
-
-#ip8 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 503px;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;   
-    
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
+.form_button:focus {
+    outline: none;
 }

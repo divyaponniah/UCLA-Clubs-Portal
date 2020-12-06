@@ -24,45 +24,40 @@ export default class login extends React.Component {
   }
 
   render() {
-    return (<div className="background">
-    <div className="welcomeTxt">
-      <p>Welcome to the UCLA Clubs Portal</p>
-    </div>
-    <div className="logInPortalTxt">
-      <p>Log in to my portal</p>
-    </div>
-    <form onSubmit={this.submitHandler}>
-      <div className="emailTxt">
-        <p>Email</p>
-      </div>
-      <input
-        type='text'
-        name='email'
-        id='ip1'
-        onChange={this.myChangeHandler}
-      />
-      <div className="passwordTxt">
-        <p>Password</p>
-      </div>
-      <input
-        type='text'
-        name='password'
-        id='ip2'
-        onChange={this.myChangeHandler}
-      />
-      <Link to="/clubs"><button
-        type='submit'
-        id='ip3'>LOG IN</button></Link>
-    </form>
-    <div className="registerText">
-      <p>Don't have an account?</p>
-    </div>
-    <div className="registerButton">
-      <Link to="/signup">
-        <button id='ib1'>
-          Create One.
-        </button>
-      </Link>
+    return (
+    <div className="body" style={{backgroundColor: '#1488E0'}}>
+      <p className="bodyHeader">Welcome to the UCLA Clubs Portal</p>
+      <p className="bodyHeader_1">Log in to my portal</p>
+      <form className="form" onSubmit={this.submitHandler}>
+        <div className="inputTxt">
+          <p>Email</p>
+        </div>
+        <input
+          type='text'
+          name='email'
+          className="form_input"
+          onChange={this.myChangeHandler}
+        />
+        <div className="inputTxt">
+          <p>Password</p>
+        </div>
+        <input
+          type='text'
+          name='password'
+          className="form_input"
+          onChange={this.myChangeHandler}
+        />
+        <Link to="/clubs">
+          <button className="form_button" type='submit'>LOG IN</button>
+        </Link>
+      </form>
+      <p className="bodyHeader_1">Don't have an account?</p>
+      <div className="registerButton">
+        <Link to="/signup">
+          <button className="button">
+            Create One
+          </button>
+        </Link>
     </div> 
   </div>
 );

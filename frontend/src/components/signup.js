@@ -25,57 +25,53 @@ export default class signUp extends React.Component {
 
   render() {
     return (
-      <div className="background">
-        
-        <div className="createAccountTxt">
-          <p>Create your Account</p>
-        </div>
-        
-        <form onSubmit={this.submitHandler}>
+      <div className="body" style={{backgroundColor: '#1488E0'}}>
+        <p className="bodyHeader">Create your Account</p>
+        <form onSubmit={this.submitHandler} className="form">
           
-          <div className="firstNameText">
+          <div className="inputTxt">
             <p>First Name</p>
           </div>
           <input
             type='text'
             name='First Name'
-            id='ip5'
+            className="form_input"
             onChange={this.myChangeHandler}
           />
 
-          <div className="lastNameText">
+          <div className="inputTxt">
             <p>Last Name</p>
           </div>
           <input
             type='text'
             name='Last Name'
-            id='ip6'
+            className="form_input"
             onChange={this.myChangeHandler}
           />
 
-          <div className="emailText2">
+          <div className="inputTxt">
             <p>Email</p>
           </div>
           <input
             type='text'
             name='email2'
-            id='ip7'
+            className="form_input"
             onChange={this.myChangeHandler}
           />
 
-          <div className="passwordText2">
+          <div className="inputTxt">
             <p>Password</p>
           </div>
           <input
             type='text'
             name='password2'
-            id='ip8'
+            className="form_input"
             onChange={this.myChangeHandler}
           />
           
-          <Link to="/login"><button
-            type='submit'
-            id='ib2'>CREATE ACCOUNT</button></Link>
+            <Link to="/login">
+              <button type='submit' className="form_button">CREATE ACCOUNT</button>
+            </Link>
         </form>
       </div>  
     );
