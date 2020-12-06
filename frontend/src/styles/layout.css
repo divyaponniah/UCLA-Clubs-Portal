@@ -7,343 +7,193 @@
     padding: 64px 32px;
     min-height: calc(70vmin);
 }
-
-.background {
-    position: absolute;
-    width: 1440px;
-    height: 790px;
-    left: 0px;
-    top: 0px;
-
-    background: #1488E0;
+.body_nopadding {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(70vmin);
 }
-
-.welcomeTxt {
-    position: absolute;
-    width: 811px;
-    height: 70px;
-    left: 390px;
-    top: 30px;
-
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 53px;
-
-    color: #FFFFFF;
+.button {
+    background-color: #0033b6;
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: none;
+    color: white;
 }
-
-.logInPortalTxt {
-    position: absolute;
-    width: 308px;
-    height: 44px;
-    left: 583px;
-    top: 185px;
-
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 44px;
-    /* identical to box height */
-
-    color: #FFFFFF;
+.button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
-
-.emailTxt {
-    position: absolute;
-    width: 66px;
-    height: 31px;
-    left: 440px;
-    top: 251px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
+.button:focus {
+    outline: none;
+}
+.link {
     font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
+    color: white;
+    text-decoration: none;
+}
+.link:hover {
+    color: #eedc79;
 }
 
-#ip1 {
+/*-----------------------MENU---------------------*/
+.menu {
     position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 303px;
+    background-color: #1488e0;
+    height: 100vh;
+    width: 40%;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    animation: slideRight 2.5s forwards;
+    display: none;
+}
+.menu_setting {
+    margin: 24px;
+    float: left;
+    margin-right: auto;
+    border: none;
+    color: #5aace9;
+    background-color: #0033b6;
+    top: 0;
+    position: absolute;
+    z-index: 100;
 
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;    
+}
+.menu_setting:hover {
+    cursor: pointer;
+    color: #eedc79;
+}
+.menu_setting:focus {
+    outline: none;
+}
+.menu .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 16px 0px;
+}
+.club_link {
+    color: #d0e7f9;
+    width: 100%;
+    margin: 8px 0px;
+    font-size: 18px;
+}
+.menu_button {
+    background-color: #0033b6;
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    width: 100%;
+    font-size: 18px;
+}
+.menu_button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.menu_button:focus {
+    outline: none;
+}
+.trash_button {
+    float: right;
+    margin-left: auto;
+    border: none;
+    color: #5aace9;
+    background-color: #1488e0;
 
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
+}
+.trash_button:hover {
+    cursor: pointer;
+    color: #0033b6;
+}
+.trash_button:focus {
+    outline: none;
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(-80%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
 
-.passwordTxt {
-    position: absolute;
-    width: 119px;
-    height: 31px;
-    left: 440px;
-    top: 351px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
-    font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
+/*-----------------------------CLUBS PAGE---------------------*/
+.searchbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 54px 32px;
+    padding-bottom: 32px;
+    background-color: #0033b6;
+    color: white;
 }
 
-#ip2 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 403px;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;   
-    
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
+.search-container {
+    width: 100%;
+}
+.search_button {
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 3px;
+    margin-left: 16px;
+    border: none;
+    color: white;
+    width: auto;
+}
+.search_button:hover {
+    cursor: pointer;
+    background-color: #eedc79;
+}
+.search_button:focus {
+    outline: none;
+}
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.search input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+    flex-grow: 3;
 }
 
-#ip3 {
-    position: absolute;
-    width: 629px;
-    height: 180px;
-    left: 630px;
-    top: 510px;
-    
-    background-color: #0033B6;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 170px;
-    height: 58px; 
-    
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 0px;
-
-    color: rgba(254, 253, 248, 0.8);;
+.button_container {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
 }
-
-.registerText {
-    position: absolute;
-    width: 336px;
-    height: 38px;
-    left: 495px;
-    top: 677px;
-
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 38px;
-    /* identical to box height */
-
-    color: #FFFFFF;
+.club_list {
+    padding: 24px;
 }
-
-#ib1 {
-    position: absolute;
-    width: 193px;
-    height: 47px;
-    left: 775px;
-    top: 700px;
-
-    background-color: #0033B6;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 155px;
-    height: 40px;
-
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 0px;
-    /* identical to box height */
-
-    color: rgba(254, 253, 248, 0.8);
+.club_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: black solid 1px;
+    padding: 8px;
 }
-
-.createAccountTxt {
-    position: absolute;
-    width: 811px;
-    height: 70px;
-    left: 500px;
-    top: 30px;
-
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 53px;
-
-    color: #FFFFFF;
+.club_words {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
 }
-
-#ib2 {
-    position: absolute;
-    width: 357px;
-    height: 60px;
-    left: 535px;
-    top: 650px;
-    
-    background-color: #0033B6;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 340px;
-    height: 58px; 
-    
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 0px;
-
-    color: rgba(254, 253, 248, 0.8);;
+.club_card h3 {
+    margin: 0px;
+    font-size: 24px;
 }
-
-.firstNameText {
-    position: absolute;
-    width: 119px;
-    height: 31px;
-    left: 440px;
-    top: 150px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
-    font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
-}
-
-#ip5 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 203px;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;   
-    
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
-}
-
-.lastNameText {
-    position: absolute;
-    width: 119px;
-    height: 31px;
-    left: 440px;
-    top: 250px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
-    font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
-}
-
-#ip6 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 303px;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;   
-    
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
-}
-
-.emailText2 {
-    position: absolute;
-    width: 119px;
-    height: 31px;
-    left: 440px;
-    top: 350px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
-    font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
-}
-
-#ip7 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 403px;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;   
-    
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
-}
-
-.passwordText2 {
-    position: absolute;
-    width: 119px;
-    height: 31px;
-    left: 440px;
-    top: 450px;
-
-    font-style: Mulish;
-    /*font-weight: bold;*/
-    font-size: 20px;
-    line-height: 31px;
-
-    color: #FFFFFF;
-}
-
-#ip8 {
-    position: absolute;
-    width: 629px;
-    height: 200px;
-    left: 428px;
-    top: 503px;
-
-    border-radius: 10px;
-    border: 2px;
-    padding: 20px; 
-    width: 520px;
-    height: 15px;   
-    
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
+.club_card p {
+    margin: 16px 0px;
 }

@@ -5,7 +5,7 @@ export default class home extends React.Component {
   render() {
     return (
       <div className="body">
-          temp
+          body
       </div>
     );
   }
