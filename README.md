@@ -6,6 +6,7 @@
 `npm install`
  
 ## Run the project
+> Make sure you are inside the "frontend" folder.
 > Type this into your command line:
 `npm start`
 
