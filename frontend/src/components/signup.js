@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/layout.css";
 import {Link } from "react-router-dom";
 
-export default class login extends React.Component {
+export default class signUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -26,48 +26,60 @@ export default class login extends React.Component {
   render() {
     return (
       <div className="background">
-        <div className="welcomeTxt">
-          <p>Welcome to the UCLA Clubs Portal</p>
+        
+        <div className="createAccountTxt">
+          <p>Create your Account</p>
         </div>
-        <div className="logInPortalTxt">
-          <p>Log in to my portal</p>
-        </div>
+        
         <form onSubmit={this.submitHandler}>
-          <div className="emailTxt">
+          
+          <div className="firstNameText">
+            <p>First Name</p>
+          </div>
+          <input
+            type='text'
+            name='First Name'
+            id='ip5'
+            onChange={this.myChangeHandler}
+          />
+
+          <div className="lastNameText">
+            <p>Last Name</p>
+          </div>
+          <input
+            type='text'
+            name='Last Name'
+            id='ip6'
+            onChange={this.myChangeHandler}
+          />
+
+          <div className="emailText2">
             <p>Email</p>
           </div>
           <input
             type='text'
-            name='email'
-            id='ip1'
+            name='email2'
+            id='ip7'
             onChange={this.myChangeHandler}
           />
-          <div className="passwordTxt">
+
+          <div className="passwordText2">
             <p>Password</p>
           </div>
           <input
             type='text'
-            name='password'
-            id='ip2'
+            name='password2'
+            id='ip8'
             onChange={this.myChangeHandler}
           />
+          
           <input
             type='submit'
-            value='LOG IN'
-            id='ip3'
+            value='CREATE ACCOUNT'
+            id='ib2'
           />
         </form>
-        <div className="registerText">
-          <p>Don't have an account?</p>
-        </div>
-        <div className="registerButton">
-          <Link to="/signup">
-            <button id='ib1'>
-              Create One.
-            </button>
-          </Link>
-        </div> 
-      </div>
+      </div>  
     );
   }
 }
