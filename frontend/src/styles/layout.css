@@ -1,259 +1,305 @@
 /*-----------------------GENERAL CSS------------------------*/
 .body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 64px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 32px;
 }
 .body_nopadding {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .button {
-    background-color: #0033b6;
-    padding: 8px 16px;
-    border-radius: 12px;
-    border: none;
-    color: white;
+  background-color: #0033b6;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  color: white;
 }
 .button:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .button:focus {
-    outline: none;
+  outline: none;
 }
 .link {
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
 }
 .link:hover {
-    color: #eedc79;
+  color: #eedc79;
 }
 
 /*-----------------------MENU---------------------*/
 .menu {
-    position: absolute;
-    background-color: #1488e0;
-    height: 100vh;
-    width: 40%;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
-    animation: slideRight 2.5s forwards;
-    display: none;
+  position: absolute;
+  background-color: #1488e0;
+  height: 100vh;
+  width: 40%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  animation: slideRight 2.5s forwards;
+  display: none;
 }
 .menu_setting {
-    margin: 24px;
-    float: left;
-    margin-right: auto;
-    border: none;
-    color: #5aace9;
-    background-color: #0033b6;
-    top: 0;
-    position: absolute;
-    z-index: 100;
-
+  margin: 24px;
+  float: left;
+  margin-right: auto;
+  border: none;
+  color: #5aace9;
+  background-color: #0033b6;
+  top: 0;
+  position: absolute;
+  z-index: 100;
 }
 .menu_setting:hover {
-    cursor: pointer;
-    color: #eedc79;
+  cursor: pointer;
+  color: #eedc79;
 }
 .menu_setting:focus {
-    outline: none;
+  outline: none;
 }
 .menu .column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 16px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 16px 0px;
 }
 .club_link {
-    color: #d0e7f9;
-    width: 100%;
-    margin: 8px 0px;
-    font-size: 18px;
+  color: #d0e7f9;
+  width: 100%;
+  margin: 8px 0px;
+  font-size: 18px;
 }
 .menu_button {
-    background-color: #0033b6;
-    padding: 8px 16px;
-    border-radius: 12px;
-    border: none;
-    color: white;
-    width: 100%;
-    font-size: 18px;
+  background-color: #0033b6;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  width: 100%;
+  font-size: 18px;
 }
 .menu_button:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .menu_button:focus {
-    outline: none;
+  outline: none;
 }
 .trash_button {
-    float: right;
-    margin-left: auto;
-    border: none;
-    color: #5aace9;
-    background-color: #1488e0;
-
+  float: right;
+  margin-left: auto;
+  border: none;
+  color: #5aace9;
+  background-color: #1488e0;
 }
 .trash_button:hover {
-    cursor: pointer;
-    color: #0033b6;
+  cursor: pointer;
+  color: #0033b6;
 }
 .trash_button:focus {
-    outline: none;
+  outline: none;
 }
 @keyframes slideRight {
-    0% {
-        transform: translateX(-80%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
+  0% {
+    transform: translateX(-80%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 /*-----------------------------CLUBS PAGE---------------------*/
 .searchbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 54px 32px;
-    padding-bottom: 32px;
-    background-color: #0033b6;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 54px 32px;
+  padding-bottom: 32px;
+  background-color: #0033b6;
+  color: white;
 }
 
 .search-container {
-    width: 100%;
+  width: 100%;
 }
 .search_button {
-    background-color: white;
-    padding: 8px 16px;
-    border-radius: 3px;
-    margin-left: 16px;
-    border: none;
-    color: white;
-    width: auto;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 3px;
+  margin-left: 16px;
+  border: none;
+  color: white;
+  width: auto;
 }
 .search_button:hover {
-    cursor: pointer;
-    background-color: #eedc79;
+  cursor: pointer;
+  background-color: #eedc79;
 }
 .search_button:focus {
-    outline: none;
+  outline: none;
 }
 .search {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
-.search input[type=text] {
-    padding: 6px;
-    font-size: 17px;
-    border: none;
-    flex-grow: 3;
+.search input[type="text"] {
+  padding: 6px;
+  font-size: 17px;
+  border: none;
+  flex-grow: 3;
 }
 
 .button_container {
-    padding-top: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
-    align-items: center;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
 }
 .club_list {
-    padding: 24px;
+  padding: 24px;
 }
 .club_card {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-bottom: black solid 1px;
-    padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: black solid 1px;
+  padding: 8px;
 }
 .club_words {
-    flex-grow: 3;
-    display: flex;
-    flex-direction: column;
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
 }
 .club_card h3 {
-    margin: 0px;
-    font-size: 24px;
+  margin: 0px;
+  font-size: 24px;
 }
 .club_card p {
-    margin: 16px 0px;
+  margin: 16px 0px;
 }
 
 /*---------------------LOGIN------------------*/
 .bodyHeader {
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 53px;
-    color: #FFFFFF;
+  font-style: Mulish;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 53px;
+  color: #ffffff;
 }
 .bodyHeader_1 {
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 44px;
-    /* identical to box height */
+  font-style: Mulish;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 44px;
+  /* identical to box height */
 
-    color: #FFFFFF;
+  color: #ffffff;
 }
 .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .inputTxt {
-    font-style: Mulish;
-    font-size: 20px;
-    line-height: 31px;
+  font-style: Mulish;
+  font-size: 20px;
+  line-height: 31px;
 
-    color: #FFFFFF;
+  color: #ffffff;
 }
 .form_input {
-    border-radius: 10px;
-    border: 2px;
-    padding: 16px 20px; 
-    width: 100%;
-    
-    font-style: Mulish;
-    font-size: 25px;
-    line-height: 0px;
+  border-radius: 10px;
+  border: 2px;
+  padding: 16px 20px;
+  width: 100%;
+
+  font-style: Mulish;
+  font-size: 25px;
+  line-height: 0px;
 }
 .form_button {
-    background-color: #0033B6;
+  background-color: #0033b6;
 
-    border-radius: 10px;
-    border: 0px;
-    padding: 20px 32px; 
-    margin-top: 32px;
-    
-    font-style: Mulish;
-    font-weight: bold;
-    font-size: 25px;
+  border-radius: 10px;
+  border: 0px;
+  padding: 20px 32px;
+  margin-top: 32px;
 
-    color: rgba(254, 253, 248, 0.8);;
+  font-style: Mulish;
+  font-weight: bold;
+  font-size: 25px;
+
+  color: rgba(254, 253, 248, 0.8);
 }
 .form_button:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .form_button:focus {
-    outline: none;
+  outline: none;
+}
+
+/*-----------------------------EVENTS PAGE---------------------*/
+.event_wrap {
+  padding-left: 330px;
+  padding-right: 330px;
+}
+
+.event_card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  background-color: #0033b6;
+  border-radius: 5px;
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+}
+
+.event_container {
+  background-color: #1488e0;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+.event_title {
+  font-style: Mulish;
+  font-weight: bolder;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.event_info {
+  font-style: Mulish;
+  font-weight: bolder;
+  font-size: 20px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.date {
+  font-style: Mulish;
+  font-weight: bold;
+  align-items: left;
+  font-size: 30px;
+  line-height: 44px;
 }
