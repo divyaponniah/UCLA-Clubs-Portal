@@ -14,7 +14,7 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Event
-        fields = ['url', 'club', 'name', 'date', 'description']
+        fields = ['url', 'pk', 'club', 'name', 'date', 'description']
 
 
 class ClubSerializer(serializers.HyperlinkedModelSerializer):
@@ -23,7 +23,7 @@ class ClubSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Club
-        fields = ['url', 'name', 'category', 'description', 'socials', 'contact', 'events']
+        fields = ['url', 'pk', 'name', 'category', 'description', 'socials', 'contact', 'events']
 
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
@@ -34,7 +34,7 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Profile
-        fields = ['url', 'user', 'clubs', 'club_ids']
+        fields = ['url', 'pk', 'user', 'clubs', 'club_ids']
 
 
 
