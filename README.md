@@ -2,12 +2,12 @@
 
 # Frontend
 ## Start the project
-> Make sure that you have installed npm by doing:
+> Make sure that you have installed npm by doing:\
 `npm install`
  
 ## Run the project
-> Make sure you are inside the "frontend" folder.
-> Type this into your command line:
+> Make sure you are inside the "frontend" folder.\
+> Type this into your command line:\
 `npm start`
 
 # Backend
@@ -15,6 +15,12 @@
 ```
 python3 -m venv env
 source env/bin/activate
+pip install -r requirements.txt
+```
+> Windows:
+```
+python3 -m venv env
+.\env\bin\activate
 pip install -r requirements.txt
 ```
 
