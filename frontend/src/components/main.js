@@ -2,8 +2,10 @@ import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Home from "./home";
 import Login from "./login";
-import SignUp from "./signup"
-import Clubs from "./clubs"
+import SignUp from "./signup";
+import Clubs from "./clubs";
+import Events from "./events";
+import XY from "./xy";
 
 const Main = () => {
   return (
@@ -14,6 +16,8 @@ const Main = () => {
       <Route exact path="/signup" component={SignUp}></Route>
       <Route exact path="/signup" component={SignUp}></Route>
       <Route exact path="/clubs" component={Clubs}></Route>
+      <Route exact path="/events" component={Events}></Route>
+      <Route exact path="/xy" component={XY}></Route>
     </Switch>
   );
 };
