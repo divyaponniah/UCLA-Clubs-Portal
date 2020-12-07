@@ -28,8 +28,9 @@ export default class login extends React.Component {
        },
     }).then(function (response) {
       console.log(response)
-      localStorage.setItem( 'token', response.data.key )
+      localStorage.setItem( 'token', 'token '+response.data.key )
       console.log(localStorage.getItem('token'))
+      localStorage.setItem('username', u)
     }).catch(function (error) {
       console.log(error)
     });
@@ -66,7 +67,7 @@ export default class login extends React.Component {
           <p>Password</p>
         </div>
         <input
-          type='text'
+          type='password'
           name='password'
           className="form_input"
           id='form_password'
