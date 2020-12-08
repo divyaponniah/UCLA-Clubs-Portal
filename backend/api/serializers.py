@@ -18,12 +18,17 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ClubSerializer(serializers.HyperlinkedModelSerializer):
-    events = EventSerializer(many=True)
+    events = serializers.SerializerMethodField()
+    # events = EventSerializer(many=True)
     # events = serializers.HyperlinkedRelatedField(many=True, view_name='event-detail')
 
     class Meta:
         model = Club
         fields = ['url', 'pk', 'name', 'category', 'description', 'socials', 'contact', 'events']
+
+    def get_events(self, instance):
+        event_set = instance.events.all().order_by('date')
+        return EventSerializer(event_set, many=True, context=self.context).data
 
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):

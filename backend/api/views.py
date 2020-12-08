@@ -40,13 +40,13 @@ class ProfileViewSet(viewsets.ModelViewSet):
 
 
 class EventViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Event.objects.all()
+    queryset = Event.objects.all().order_by('date')
     serializer_class = EventSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 
 class ClubViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Club.objects.all()
+    queryset = Club.objects.all().order_by('name')
     serializer_class = ClubSerializer
     permission_classes = [permissions.IsAuthenticated]
 
