@@ -13,7 +13,7 @@ export default class signUp extends React.Component {
       password2: '',
     };
   }
-
+  
   submitHandler = (event) => {
     console.log('I HAVE BEEN SUMMONED');
     var u = document.getElementById('form_username').value;
@@ -61,7 +61,7 @@ export default class signUp extends React.Component {
       document.location.reload(true);
     }
   }
-
+  
   render() {
     return (
       <div className="body" style={{backgroundColor: '#1488E0'}}>
@@ -73,7 +73,6 @@ export default class signUp extends React.Component {
           </div>
           <input
             type='text'
-            name='username'
             className="form_input"
             id='form_username'
           />
@@ -83,7 +82,6 @@ export default class signUp extends React.Component {
           </div>
           <input
             type='text'
-            name='email'
             className="form_input"
             id='form_email'
           />
@@ -92,8 +90,7 @@ export default class signUp extends React.Component {
             <p>Password</p>
           </div>
           <input
-            type='text'
-            name='password1'
+            type='password'
             className="form_input"
             id='form_password1'
           />
@@ -102,8 +99,7 @@ export default class signUp extends React.Component {
             <p>Re-type Password</p>
           </div>
           <input
-            type='text'
-            name='password2'
+            type='password'
             className="form_input"
             id='form_password2'
           />

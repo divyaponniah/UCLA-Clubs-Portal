@@ -8,7 +8,7 @@ from django.dispatch import receiver
 class Club(models.Model):
     name = models.CharField(max_length=255)
     category = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.CharField(max_length=1024)
     socials = models.CharField(max_length=255)
     contact = models.CharField(max_length=255)
 

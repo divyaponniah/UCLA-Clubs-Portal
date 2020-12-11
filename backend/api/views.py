@@ -1,16 +1,9 @@
-from django.shortcuts import render
 from django.contrib.auth.models import User
 from .models import Profile, Event, Club
 from rest_framework import viewsets
 from rest_framework import permissions
 from .serializers import UserSerializer, ProfileSerializer, EventSerializer, ClubSerializer
 from .permissions import IsOwner, IsSuperUser
-from rest_framework.decorators import action
-from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
-from rest_framework import status
-from rest_framework.decorators import api_view
-from rest_framework.views import APIView
 
 
 # Create your views here.
@@ -34,19 +27,28 @@ class ProfileViewSet(viewsets.ModelViewSet):
     def get_permissions(self):
         if self.action == 'create' or self.action == 'destroy':
             self.permission_classes = [IsSuperUser, ]
-        elif self.action == 'list' or self.action == 'retrieve' or self.action == 'partial_update' or self.action == 'update':
+        elif self.action == 'list' or self.action == 'retrieve' or \
+                self.action == 'partial_update' or self.action == 'update':
             self.permission_classes = [IsOwner]
         return super(self.__class__, self).get_permissions()
 
 
 class EventViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Event.objects.all()
+    queryset = Event.objects.all().order_by('date')
     serializer_class = EventSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 
 class ClubViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Club.objects.all()
+    queryset = Club.objects.all().order_by('name')
     serializer_class = ClubSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        search_param = self.request.query_params.get('search')
+        if search_param is not None:
+            return self.queryset.filter(name__icontains=search_param) | \
+                   self.queryset.filter(category__icontains=search_param) | \
+                   self.queryset.filter(description__icontains=search_param)
+        return self.queryset
 

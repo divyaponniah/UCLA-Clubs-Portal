@@ -28,9 +28,10 @@ export default class login extends React.Component {
        },
     }).then(function (response) {
       console.log(response)
-      localStorage.setItem( 'token', response.data.key )
+      localStorage.setItem( 'token', 'token '+response.data.key )
       console.log(localStorage.getItem('token'))
       window.location.href = "http://localhost:3000/#/clubs";
+      localStorage.setItem('username', u)
     }).catch(function (error) {
       console.log(error)
       alert('Try Again');
@@ -50,7 +51,6 @@ export default class login extends React.Component {
         </div>
         <input
           type='text'
-          name='username'
           className="form_input"
           id='form_username'
         />
@@ -60,7 +60,6 @@ export default class login extends React.Component {
         </div>
         <input
           type='text'
-          name='email'
           className="form_input"
           id='form_email'
         />
@@ -69,8 +68,7 @@ export default class login extends React.Component {
           <p>Password</p>
         </div>
         <input
-          type='text'
-          name='password'
+          type='password'
           className="form_input"
           id='form_password'
         />
