@@ -46,6 +46,9 @@ class ClubViewSet(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         search_param = self.request.query_params.get('search')
+        filter_tag = self.request.query_params.get('filter')
+        if filter_tag is not None:
+            self.queryset = self.queryset.filter(category__icontains=filter_tag)
         if search_param is not None:
             return self.queryset.filter(name__icontains=search_param) | \
                    self.queryset.filter(category__icontains=search_param) | \
