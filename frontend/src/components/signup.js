@@ -11,18 +11,6 @@ export default class signUp extends React.Component {
     };
   }
 
-  submitHandler = (event) => {
-    event.preventDefault();
-    alert("Logging In");
-    //if it's valid it'll take you to the home page
-  }
-
-  inputHandler = (event) => {
-    let nam = event.target.name;
-    let val = event.target.value;
-    this.setState({[nam]: val});
-  }
-
   render() {
     return (
       <div className="body" style={{backgroundColor: '#1488E0'}}>
@@ -53,7 +41,7 @@ export default class signUp extends React.Component {
             <p>Email</p>
           </div>
           <input
-            type='text'
+            type='password'
             name='email2'
             className="form_input"
             onChange={this.myChangeHandler}
@@ -63,7 +51,7 @@ export default class signUp extends React.Component {
             <p>Password</p>
           </div>
           <input
-            type='text'
+            type='password'
             name='password2'
             className="form_input"
             onChange={this.myChangeHandler}
