@@ -11,7 +11,7 @@ export default class xy extends React.Component {
   render() {
     return (
       <div className="body">
-        <p className="bodyHeader" style={{color: "#000000"}}> XY Events</p>
+        <p className="bodyHeader" style={{color: "#000000"}}> X Club Events</p>
         <div className="event_wrap">
           <p className="date"> Monday, November 30th</p>
           <div className="event_card">

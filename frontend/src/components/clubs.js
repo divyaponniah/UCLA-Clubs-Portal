@@ -185,15 +185,15 @@ export default class clubs extends React.Component {
           <div className="menu">
             <div className="column">
                 <h1 style={{marginTop: '0px'}}>{localStorage.getItem('username')}</h1>
-                <button className="menu_button" style={{marginBottom: '16px'}}>Events</button>
-                <button className="menu_button">Club Info</button>
+                <a href = '#events' className="menu_button" style={{marginBottom: '16px'}}>Events</a>
+                <a href = '#clubs' className="menu_button">Club Info</a>
             </div>
             <div className="column">
                 <h2>SUBSCRIPTIONS</h2>
                 {this.state.profile_clubs.map((club, index) => {
                     return(
                         <div className="club_link">
-                            <a>{club.name}</a>
+                            <a href = '#xy'> {club.name}</a>
                             <button className="trash_button" onClick={()=>{this.removeClub(club.pk)}}><FontAwesomeIcon icon={faTrash}/></button>
                         </div>
                     )
