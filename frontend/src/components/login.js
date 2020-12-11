@@ -30,8 +30,11 @@ export default class login extends React.Component {
       console.log(response)
       localStorage.setItem( 'token', response.data.key )
       console.log(localStorage.getItem('token'))
+      window.location.href = "http://localhost:3000/#/clubs";
     }).catch(function (error) {
       console.log(error)
+      alert('Try Again');
+      document.location.reload(true);
     });
   }
 
@@ -71,11 +74,10 @@ export default class login extends React.Component {
           className="form_input"
           id='form_password'
         />
-        <Link to="/clubs">
-          <button className="form_button" type='submit' onClick={() => {this.submitHandler()}}>LOG IN</button>
-        </Link>
-
       </form>
+
+      <button className="form_button" type='submit' onClick={() => {this.submitHandler()}}>LOG IN</button>
+
       <p className="bodyHeader_1">Don't have an account?</p>
       <div className="registerButton">
         <Link to="/signup">
