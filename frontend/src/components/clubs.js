@@ -9,14 +9,12 @@ export default class clubs extends React.Component {
         super(props);
         this.state = { 
             userUrl:[], // user's personal url
-            user: [], // all of user's profile data
             masterclubList: [], // all of the clubs
             clubList: [], // the list of clubs shown on the webpage
             categories: [], // every category the clubs identify as
             selectedCategories: '',
             profile_clubs: [], // the user's subscribed clubs
             profile_club_ids: [], // the user's subscribed club's id
-            pk: '', // the user club's pk
         };
       }
     
@@ -59,10 +57,6 @@ export default class clubs extends React.Component {
             console.log(this.state.profile_clubs)
             this.setState({profile_club_ids: response.data[0].club_ids})
             console.log(this.state.profile_club_ids)
-            this.setState({pk: response.data[0].pk})
-            console.log(this.state.pk)
-            this.setState({user: response.data[0].user})
-            console.log(this.state.user)
         }).catch(function (error) {
             console.log(error)
         });
@@ -114,6 +108,13 @@ export default class clubs extends React.Component {
     }
 
     selectCategory(c) {
+        var searchText = document.getElementById('club_search');
+        // clearing search bar
+        if(searchText.value != "")
+        {
+            searchText.value = "";
+        }
+
         const button = document.getElementById(c);
         if( button.style.backgroundColor == 'rgb(238, 220, 121)') {
             this.setState({clubList: this.state.masterclubList});
@@ -149,14 +150,10 @@ export default class clubs extends React.Component {
         console.log(new_club_ids.size)
         
         axios({
-            method: 'put',
+            method: 'patch',
             url: this.state.userUrl,
             data: {
                 club_ids: [...new_club_ids],
-                clubs: this.state.profile_clubs,
-                pk: this.state.pk,
-                url: this.state.userUrl,
-                user: this.state.user,
             },
             headers: {"authorization": localStorage.getItem('token')},
         }).then((response) => {
@@ -183,14 +180,10 @@ export default class clubs extends React.Component {
         console.log(new_club_ids)
         
         axios({
-            method: 'put',
+            method: 'patch',
             url: this.state.userUrl,
             data: {
                 club_ids: new_club_ids,
-                clubs: this.state.profile_clubs,
-                pk: this.state.pk,
-                url: this.state.userUrl,
-                user: this.state.user,
             },
             headers: {"authorization": localStorage.getItem('token')},
         }).then((response) => {
