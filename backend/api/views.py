@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User
-from .models import Profile, Event, Club
+from .models import Profile, Event, Club, Comment
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import UserSerializer, ProfileSerializer, EventSerializer, ClubSerializer
+from .serializers import UserSerializer, ProfileSerializer, EventSerializer, ClubSerializer, CommentSerializer
 from .permissions import IsOwner, IsSuperUser
 
 
@@ -57,4 +57,18 @@ class ClubViewSet(viewsets.ReadOnlyModelViewSet):
                    self.queryset.filter(category__icontains=search_param) | \
                    self.queryset.filter(description__icontains=search_param)
         return self.queryset
+
+
+class CommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all().order_by('date')
+    serializer_class = CommentSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        club = self.request.query_params.get('club')
+        if club is not None:
+            return self.queryset.filter(club_id=club)
+        return self.queryset
+
+
 

@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from .models import Profile, Club, Event
+from .models import Profile, Club, Event, Comment
 from rest_framework import serializers
 
 
@@ -41,6 +41,24 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     def get_clubs(self, instance):
         club_set = instance.clubs.all().order_by('name')
         return ClubSerializer(club_set, many=True, read_only=True, context=self.context).data
+
+
+class CommentSerializer(serializers.HyperlinkedModelSerializer):
+    profile = serializers.SerializerMethodField()
+    profile_id = serializers.PrimaryKeyRelatedField(many=False, read_only=False, queryset=Profile.objects.all(), source='profile')
+
+    club = serializers.SerializerMethodField()
+    club_id = serializers.PrimaryKeyRelatedField(many=False, read_only=False, queryset=Club.objects.all(), source='club')
+
+    class Meta:
+        model = Comment
+        fields = ['url', 'pk', 'profile', 'profile_id', 'club', 'club_id', 'title', 'description', 'date']
+
+    def get_profile(self, instance):
+        return ProfileSerializer(instance.profile, many=False, read_only=False, context=self.context).data
+
+    def get_club(self, instance):
+        return ClubSerializer(instance.club, many=False, read_only=False, context=self.context).data
 
 
 
