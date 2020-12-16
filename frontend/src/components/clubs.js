@@ -8,14 +8,15 @@ export default class clubs extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            userUrl:[],
-            user: [],
-            masterclubList: [],
-            clubList: [],
-            categories: [],
-            profile_clubs: [],
-            profile_club_ids: [],
-            pk: '',
+            userUrl:[], // user's personal url
+            user: [], // all of user's profile data
+            masterclubList: [], // all of the clubs
+            clubList: [], // the list of clubs shown on the webpage
+            categories: [], // every category the clubs identify as
+            selectedCategories: '',
+            profile_clubs: [], // the user's subscribed clubs
+            profile_club_ids: [], // the user's subscribed club's id
+            pk: '', // the user club's pk
         };
       }
     
@@ -89,11 +90,35 @@ export default class clubs extends React.Component {
         window.location.href="#login";
     }
 
+    search() {
+        var searchTerm = document.getElementById('club_search').value;
+        // searching clubs
+        console.log("searching...")
+        console.log(this.state.selectedCategories)
+        axios({
+            method: 'get',
+            url: "http://127.0.0.1:8000/clubs/",
+            headers: {"authorization": localStorage.getItem('token')},
+            params: {
+                search: searchTerm,
+                filter: this.state.selectedCategories,
+            },
+        }).then((response) => {
+            console.log("search results:")
+            console.log(response)
+            this.setState({clubList: response.data})
+            console.log(this.state.clubList)
+        }).catch(function (error) {
+            console.log(error)
+        });
+    }
+
     selectCategory(c) {
         const button = document.getElementById(c);
         if( button.style.backgroundColor == 'rgb(238, 220, 121)') {
             this.setState({clubList: this.state.masterclubList});
             button.style.backgroundColor = '#1488e0';
+            this.setState({selectedCategories: null})
         }
         else {
             this.setState({clubList: ""});
@@ -108,6 +133,7 @@ export default class clubs extends React.Component {
                 document.getElementById(c).style.backgroundColor = '#1488e0';
             });
             button.style.backgroundColor = '#eedc79';
+            this.setState({selectedCategories: c})
         }
     }
 
@@ -185,8 +211,8 @@ export default class clubs extends React.Component {
           <div className="menu">
             <div className="column">
                 <h1 style={{marginTop: '0px'}}>{localStorage.getItem('username')}</h1>
-                <button className="menu_button" style={{marginBottom: '16px'}}>Events</button>
-                <button className="menu_button">Club Info</button>
+                <a className="menu_button" href="#events" style={{marginBottom: '16px'}}>Events</a>
+                <a className="menu_button" href="#clubs">Club Info</a>
             </div>
             <div className="column">
                 <h2>SUBSCRIPTIONS</h2>
@@ -207,15 +233,15 @@ export default class clubs extends React.Component {
 
           <div className="searchbar">
             <div class="search-container">
-                <form className="search">
-                <input type="text" placeholder="Search.." name="search"/>
-                <button className="search_button" >
+                <form className="search_form">
+                <input type="text" placeholder="Search.." id="club_search" onChange={()=>this.search()}/>
+                <button className="search_button" onClick={()=>{this.search()}}>
                     <FontAwesomeIcon icon={faSearch} style={{color: 'black'}}/>
                 </button>
                 </form>
             </div>
             <div className="button_container">
-                { this.state.categories.map((category)=> {
+                {this.state.categories.map((category)=> {
                     return(
                         <button className="category_button" 
                             id={category} onClick={()=>{this.selectCategory(category)}}>
