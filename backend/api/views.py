@@ -38,6 +38,9 @@ class EventViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = EventSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+    def get_queryset(self):
+        return self.queryset.filter(club__students__user=self.request.user)
+
 
 class ClubViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Club.objects.all().order_by('name')
