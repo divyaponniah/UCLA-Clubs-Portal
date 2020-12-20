@@ -200,6 +200,7 @@ export default class clubs extends React.Component {
     }
 
   whenClicked(str){
+        this.toggleMenu();
         this.setState({curr_club: str});
         localStorage.setItem("score", str);
    }

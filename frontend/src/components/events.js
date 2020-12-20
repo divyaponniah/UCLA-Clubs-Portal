@@ -20,6 +20,7 @@ export default class events extends React.Component {
         pk: '',
         events: [],
         curr_club: '',
+        eventDates: [],
     };
   }
 
@@ -75,6 +76,7 @@ export default class events extends React.Component {
         console.log("Events:")
         console.log(response)
         this.setState({events: response.data})
+        this.setState({eventDates: response.data.date})
     }).catch(function (error) {
         console.log(error)
     });
@@ -131,20 +133,56 @@ removeClub(id) {
 }
 
 whenClicked(str){
+  this.toggleMenu();
   this.setState({curr_club: str});
   localStorage.setItem("score", str);
 }
 
 renderCards = (card, index) => {
+  var len = card.date.length;
+  var year = card.date.substring(0,4);
+  var month = card.date.substring(5, 7);
+  var day = card.date.substring(8, 10);
+  var time = card.date.substring(11, len - 4);
+
+  var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+  if (month == months[0])
+    month = "January";
+  else if (month == months[1])
+    month = "February";
+  else if (month == months[2])
+    month = "March";
+  else if (month == months[3])
+    month = "April";
+  else if (month == months[4])
+    month = "May";
+  else if (month == months[5])
+    month = "June"; 
+  else if (month == months[6])
+    month = "July";
+  else if (month == months[7])
+    month = "August";
+  else if (month == months[8])
+    month = "September";
+  else if (month == months[9])
+    month = "October";
+  else if (month == months[10])
+    month = "November";
+  else if (month == months[11])
+    month = "December";
+
+  var date = month + " " + day + ", "+ year;
+
   return(
-    <div className="date">{card.date}
+      <div className="date">{date}
       <div className="event_card">
          <p className="event_title">{card.name}</p>
          <div className="event_container">
             <p className="event_info">{card.club}</p>
+            <p className="event_info">{time}</p>
           </div>
+        </div>
       </div>
-    </div>
   );
 }
 
@@ -175,9 +213,9 @@ render() {
             >Log Out</button>
           </div>
               
-      <div className="body" style={{position: 'relative', float: 'left'}}>
+      <div className="body" style={{position: 'relative'}}>
           <p className="bodyHeader" style={{color: "#000000"}}> Events </p>
-          {this.state.events.map(this.renderCards)} 
+          <div className="event_wrap">{this.state.events.map(this.renderCards)} </div>
       </div>
     </div>
     );

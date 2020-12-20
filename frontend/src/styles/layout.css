@@ -282,6 +282,12 @@
 }
 
 /*-----------------------------EVENTS PAGE---------------------*/
+.event_wrap {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 25px 25px;
+}
+
 .event_card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   align-items: center;
@@ -290,13 +296,14 @@
   margin-bottom: 30px;
   padding: 10px;
   width: 300px;
-  height: 200px;
+  height: 300px;
 }
 
 .event_container {
   background-color: #1488e0;
   padding-left: 10px;
   border-radius: 5px;
+  height: 150px;
 }
 
 .event_title {
@@ -310,7 +317,6 @@
   font-style: Mulish;
   font-weight: bolder;
   font-size: 20px;
-  line-height: 40px;
   color: #ffffff;
 }
 
