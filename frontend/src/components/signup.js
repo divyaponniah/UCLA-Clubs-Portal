@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/layout.css";
-import {Link } from "react-router-dom";
 import axios from 'axios';
 
 export default class signUp extends React.Component {
@@ -28,8 +27,8 @@ export default class signUp extends React.Component {
     console.log(tempEmail);
     console.log(tempEmail2);
 
-    if(re.test(e) && (tempEmail == 'ucla' || tempEmail2 == 'g.ucla')) {
-      if (pOne == pTwo) {
+    if(re.test(e) && (tempEmail === 'ucla' || tempEmail2 === 'g.ucla')) {
+      if (pOne === pTwo) {
         console.log("CHECK");
         axios({
           method: 'post',

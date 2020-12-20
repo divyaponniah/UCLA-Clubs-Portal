@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faCog } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
 import {Card} from "react-bootstrap";
-import events from "./events";
 
 export default class ClubDetails extends React.Component {
   constructor(props) {
@@ -88,13 +87,13 @@ export default class ClubDetails extends React.Component {
     // log out; reset the token and usernamed cached and return to login page
     localStorage.setItem("token", "");
     localStorage.setItem("username", "");
-    window.location.href= "#login";
+    window.location.href= "#";
   }
 
   toggleMenu() {
     var setting = document.getElementsByClassName("menu_setting")[0];
     var menu = document.getElementsByClassName("menu")[0];
-    if (menu.style.display == "flex")
+    if (menu.style.display === "flex")
     {
         menu.style.display = "none";
         setting.style.backgroundColor = "#0033b6";

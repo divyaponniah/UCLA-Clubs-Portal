@@ -97,7 +97,7 @@ logOut() {
     // log out; reset the token and usernamed cached and return to login page
     localStorage.setItem("token", "");
     localStorage.setItem("username", "");
-    window.location.href="#login";
+    window.location.href="#";
 }
 
 removeClub(id) {

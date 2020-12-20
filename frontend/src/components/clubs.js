@@ -67,7 +67,7 @@ export default class clubs extends React.Component {
     toggleMenu() {
         var setting = document.getElementsByClassName("menu_setting")[0];
         var menu = document.getElementsByClassName("menu")[0];
-        if (menu.style.display == "flex")
+        if (menu.style.display === "flex")
         {
             menu.style.display = "none";
             setting.style.backgroundColor = "#0033b6";
@@ -83,7 +83,7 @@ export default class clubs extends React.Component {
         // log out; reset the token and usernamed cached and return to login page
         localStorage.setItem("token", "");
         localStorage.setItem("username", "");
-        window.location.href= "#login";
+        window.location.href= "#";
     }
 
     showClubDetail(id) {
@@ -119,13 +119,13 @@ export default class clubs extends React.Component {
     selectCategory(c) {
         var searchText = document.getElementById('club_search');
         // clearing search bar
-        if(searchText.value != "")
+        if(searchText.value !== "")
         {
             searchText.value = "";
         }
 
         const button = document.getElementById(c);
-        if( button.style.backgroundColor == 'rgb(238, 220, 121)') {
+        if( button.style.backgroundColor === 'rgb(238, 220, 121)') {
             this.setState({clubList: this.state.masterclubList});
             button.style.backgroundColor = '#1488e0';
             this.setState({selectedCategories: null})
@@ -134,7 +134,7 @@ export default class clubs extends React.Component {
             this.setState({clubList: ""});
             var newList = [];
             this.state.masterclubList.map((club, index) => {
-                if(club.category == c) {
+                if(club.category === c) {
                     newList.push(club);
                 }
             });

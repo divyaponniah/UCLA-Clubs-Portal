@@ -84,7 +84,7 @@ export default class events extends React.Component {
   toggleMenu() {
     var setting = document.getElementsByClassName("menu_setting")[0];
     var menu = document.getElementsByClassName("menu")[0];
-    if (menu.style.display == "flex")
+    if (menu.style.display === "flex")
     {
         menu.style.display = "none";
         setting.style.backgroundColor = "#ffffff";
@@ -100,7 +100,7 @@ logOut() {
     // log out; reset the token and usernamed cached and return to login page
     localStorage.setItem("token", "");
     localStorage.setItem("username", "");
-    window.location.href="#login";
+    window.location.href="#";
 }
 
 removeClub(id) {
@@ -145,29 +145,29 @@ renderCards = (card, index) => {
   var time = card.date.substring(11, len - 4);
 
   var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-  if (month == months[0])
+  if (month === months[0])
     month = "January";
-  else if (month == months[1])
+  else if (month === months[1])
     month = "February";
-  else if (month == months[2])
+  else if (month === months[2])
     month = "March";
-  else if (month == months[3])
+  else if (month === months[3])
     month = "April";
-  else if (month == months[4])
+  else if (month === months[4])
     month = "May";
-  else if (month == months[5])
+  else if (month === months[5])
     month = "June"; 
-  else if (month == months[6])
+  else if (month === months[6])
     month = "July";
-  else if (month == months[7])
+  else if (month === months[7])
     month = "August";
-  else if (month == months[8])
+  else if (month === months[8])
     month = "September";
-  else if (month == months[9])
+  else if (month === months[9])
     month = "October";
-  else if (month == months[10])
+  else if (month === months[10])
     month = "November";
-  else if (month == months[11])
+  else if (month === months[11])
     month = "December";
 
   var date = month + " " + day + ", "+ year;
