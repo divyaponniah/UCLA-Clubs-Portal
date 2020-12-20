@@ -2,6 +2,7 @@
 
 # Frontend
 ## Start the project
+> Make sure that you are inside the "frontend" folder.\
 > Make sure that you have installed npm by doing:\
 `npm install`
  
