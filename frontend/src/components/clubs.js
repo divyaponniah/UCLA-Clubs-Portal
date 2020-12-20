@@ -227,7 +227,7 @@ export default class clubs extends React.Component {
                 {this.state.profile_clubs.map((club, index) => {
                     return(
                         <div className="club_link">
-                            <a href = '#clubevents' onClick={() => {this.whenClicked(club.name)}}> {club.name}</a>
+                            <a className="club_link" href = '#clubevents' onClick={() => {this.whenClicked(club.name)}}> {club.name}</a>
                             <button className="trash_button" onClick={()=>{this.removeClub(club.pk)}}><FontAwesomeIcon icon={faTrash}/></button>
                         </div>
                     )

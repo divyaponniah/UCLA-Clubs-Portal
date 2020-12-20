@@ -85,6 +85,10 @@
   margin: 8px 0px;
   font-size: 18px;
 }
+.club_link:hover {
+  text-decoration: none;
+  color: #eedc79;
+}
 .menu_button {
   background-color: #0033b6;
   padding: 8px 16px;
@@ -100,6 +104,8 @@
 .menu_button:hover {
   cursor: pointer;
   transform: scale(1.1);
+  color: white;
+  text-decoration: none;
 }
 .menu_button:focus {
   outline: none;

@@ -217,6 +217,12 @@ export default class ClubDetails extends React.Component {
         console.log(error)
     });
   }
+  
+  whenClicked(str){
+    this.toggleMenu();
+    this.setState({curr_club: str});
+    localStorage.setItem("score", str);
+  }
 
   render() {
     return (
@@ -233,7 +239,7 @@ export default class ClubDetails extends React.Component {
                 {this.state.profile_clubs.map((club, index) => {
                     return(
                       <div className="club_link">
-                        <p style={{margin: '0px'}}>{club.name}</p>
+                        <a className="club_link" href = '#clubevents' onClick={() => {this.whenClicked(club.name)}}>{club.name}</a>
                         <button className="trash_button" onClick={()=>{this.removeClub(club.pk)}}><FontAwesomeIcon icon={faTrash}/></button>
                       </div>
                     )
@@ -256,7 +262,7 @@ export default class ClubDetails extends React.Component {
         </div>
       </div>
           
-      <div className="body" style={{paddingTop: '0px'}}>
+      <div className="body">
         <div className="club_details">
           <h2>Description</h2>
           <p>{this.state.club.description}</p>
