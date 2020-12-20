@@ -33,8 +33,12 @@ python manage.py runserver
 ```
 > For first time admin:
 ```
+cd backend
+python manage.py makemigrations
+python manage.py migrate
 python manage.py createsuperuser
 # enter username, email, password
+python manage.py runserver
 ```
 > Head to http://127.0.0.1:8000/admin/, log in with superuser credentials and input club/event data with admin interface
 
