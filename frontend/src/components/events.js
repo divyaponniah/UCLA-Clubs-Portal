@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faCog } from "@fortawesome/free-solid-svg-icons";
 // import "../clubs.js";
 import axios from 'axios';
-import child from "../components/xy.js"
 
 export default class events extends React.Component {
   constructor(props) {
