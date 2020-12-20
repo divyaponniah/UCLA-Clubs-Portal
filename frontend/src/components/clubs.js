@@ -5,6 +5,7 @@ import { faSearch, faTrash, faCog } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
 
 export default class clubs extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = { 
@@ -15,6 +16,7 @@ export default class clubs extends React.Component {
             selectedCategories: '',
             profile_clubs: [], // the user's subscribed clubs
             profile_club_ids: [], // the user's subscribed club's id
+
         };
       }
     
@@ -173,6 +175,7 @@ export default class clubs extends React.Component {
         }).catch(function (error) {
             console.log(error)
         });
+
     }
 
     removeClub(id) {
@@ -203,6 +206,11 @@ export default class clubs extends React.Component {
         });
     }
 
+  whenClicked(str){
+        this.toggleMenu();
+        this.setState({curr_club: str});
+        localStorage.setItem("score", str);
+   }
 
   render() {
     return (
@@ -219,7 +227,7 @@ export default class clubs extends React.Component {
                 {this.state.profile_clubs.map((club, index) => {
                     return(
                         <div className="club_link">
-                            <p style={{margin: '0px'}}>{club.name}</p>
+                            <a href = '#clubevents' onClick={() => {this.whenClicked(club.name)}}> {club.name}</a>
                             <button className="trash_button" onClick={()=>{this.removeClub(club.pk)}}><FontAwesomeIcon icon={faTrash}/></button>
                         </div>
                     )

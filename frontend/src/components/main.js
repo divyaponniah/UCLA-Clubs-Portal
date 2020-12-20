@@ -5,6 +5,7 @@ import Login from "./login";
 import SignUp from "./signup";
 import Clubs from "./clubs";
 import Events from "./events";
+import Clubevents from "./clubevents";
 import ClubDetails from "./club-details";
 
 const Main = () => {
@@ -17,6 +18,7 @@ const Main = () => {
       <Route exact path="/signup" component={SignUp}></Route>
       <Route exact path="/clubs" component={Clubs}></Route>
       <Route exact path="/events" component={Events}></Route>
+      <Route exact path="/clubevents" component={Clubevents}></Route>
       <Route exact path="/club-details" component={ClubDetails}></Route>
     </Switch>
   );

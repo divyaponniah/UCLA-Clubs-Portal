@@ -2,10 +2,9 @@ import React from "react";
 import "../styles/layout.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faCog } from "@fortawesome/free-solid-svg-icons";
-// import "../clubs.js";
 import axios from 'axios';
 
-export default class events extends React.Component {
+export default class clubevents extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -19,7 +18,6 @@ export default class events extends React.Component {
         pk: '',
         events: [],
         curr_club: '',
-        eventDates: [],
     };
   }
 
@@ -75,7 +73,6 @@ export default class events extends React.Component {
         console.log("Events:")
         console.log(response)
         this.setState({events: response.data})
-        this.setState({eventDates: response.data.date})
     }).catch(function (error) {
         console.log(error)
     });
@@ -131,12 +128,6 @@ removeClub(id) {
   });
 }
 
-whenClicked(str){
-  this.toggleMenu();
-  this.setState({curr_club: str});
-  localStorage.setItem("score", str);
-}
-
 renderCards = (card, index) => {
   var len = card.date.length;
   var year = card.date.substring(0,4);
@@ -172,17 +163,32 @@ renderCards = (card, index) => {
 
   var date = month + " " + day + ", "+ year;
 
-  return(
-      <div className="date">{date}
-      <div className="event_card">
-         <p className="event_title">{card.name}</p>
-         <div className="event_container">
+  if (localStorage.getItem("score") != null ) {
+      this.state.curr_club = localStorage.getItem("score");
+      localStorage.removeItem("score");
+    }
+
+  if (card.club == this.state.curr_club){
+    return(
+      <div className="date" >{date}
+        <div className="event_card">
+           <p className="event_title">{card.name}</p>
+           <div className="event_container">
             <p className="event_info">{card.club}</p>
             <p className="event_info">{time}</p>
           </div>
         </div>
       </div>
-  );
+    )
+  }
+  else{
+    return(null)
+  }
+}
+
+whenClicked(str){
+  this.toggleMenu();
+  this.setState({curr_club: str});
 }
 
 render() {
@@ -200,7 +206,7 @@ render() {
                 {this.state.profile_clubs.map((club, index) => {
                     return(
                         <div className="club_link">
-                            <a href = "#clubevents" onClick={() => {this.whenClicked(club.name)}}> {club.name}</a>
+                            <a href = '#clubevents' onClick={() => {this.whenClicked(club.name)}}> {club.name}</a>
                             <button className="trash_button" onClick={()=>{this.removeClub(club.pk)}}><FontAwesomeIcon icon={faTrash}/></button>
                         </div>
                     )
@@ -211,10 +217,10 @@ render() {
                 onClick={()=>{this.logOut()}}
             >Log Out</button>
           </div>
-              
-      <div className="body" style={{position: 'relative'}}>
-          <p className="bodyHeader" style={{color: "#000000"}}> Events </p>
-          <div className="event_wrap">{this.state.events.map(this.renderCards)} </div>
+
+      <div className="body" style={{position: 'relative', float: 'left'}}>
+          <p className="bodyHeader" style={{color: "#000000"}}>{this.state.curr_club} Events</p>
+          <div className="event_wrap">{this.state.events.map(this.renderCards)} </div> 
       </div>
     </div>
     );

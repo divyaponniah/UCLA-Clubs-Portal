@@ -244,7 +244,7 @@
   border-radius: 12px;
   border: none;
   color: white;
-  width: auto; 
+  width: auto;
   margin-right: 16px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -288,19 +288,16 @@
 
 /*-----------------------------EVENTS PAGE---------------------*/
 .event_wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 25px 25px;
 }
 
 .event_card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
+  align-items: center;
   background-color: #0033b6;
   border-radius: 5px;
-  float: left;
   margin-bottom: 30px;
   padding: 10px;
   width: 300px;
@@ -311,6 +308,7 @@
   background-color: #1488e0;
   padding-left: 10px;
   border-radius: 5px;
+  height: 150px;
 }
 
 .event_title {
@@ -322,7 +320,6 @@
 .event_info {
   font-weight: bolder;
   font-size: 20px;
-  line-height: 40px;
   color: #ffffff;
 }
 
