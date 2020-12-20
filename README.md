@@ -34,5 +34,7 @@ python manage.py runserver
 > For first time admin:
 ```
 python manage.py createsuperuser
+# enter username, email, password
 ```
+> Head to http://127.0.0.1:8000/admin/, log in with superuser credentials and input club/event data with admin interface
 
