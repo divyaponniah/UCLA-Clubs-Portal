@@ -29,6 +29,9 @@ pip install -r requirements.txt
 cd backend
 python manage.py makemigrations
 python manage.py migrate
-> For first time admin: python manage.py createsuperuser
 python manage.py runserver
 ```
+```
+For first time admin: python manage.py createsuperuser
+```
+
