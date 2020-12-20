@@ -43,11 +43,12 @@ python manage.py runserver
 ```
 > Head to http://127.0.0.1:8000/admin/, log in with superuser credentials and input club/event data with admin interface
 
-# Figma 
+# Additional Documentation & Files
+## Figma
 ```
 https://www.figma.com/file/FCNyenRtX7VXk5l4srdhDN/CS-97-Project?node-id=0%3A1
 ```
-# Project Presentation Video
+## Project Presentation Video
 ```
 https://drive.google.com/file/d/1hpbR5LDODtbMuACwvaYBLAza5dU2RHZU/view?usp=sharing 
 ```
