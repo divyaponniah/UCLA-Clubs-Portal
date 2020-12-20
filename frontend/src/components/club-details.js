@@ -3,6 +3,8 @@ import "../styles/layout.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faCog } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
+import {Card} from "react-bootstrap";
+import events from "./events";
 
 export default class ClubDetails extends React.Component {
   constructor(props) {
@@ -128,6 +130,34 @@ export default class ClubDetails extends React.Component {
     });
   }
 
+  renderCard = (card, index) => {
+    var strlen = card.date.length;
+    var temp_year = card.date.substring(0, 4);
+    var temp_month = card.date.substring(5, 7);
+    var temp_day = card.date.substring(8, 10);
+    var temp_time = card.date.substring(11, strlen-4);
+    var temp_date = temp_month + "-" + temp_day + "-" + temp_year
+
+    return(
+        <Card
+          border='primary'
+          key={index}
+          style={{ width: '22rem' }}
+          className="text-center"
+        >
+        <Card.Body>
+          <Card.Header as="h3">{card.name}</Card.Header>
+          <Card.Title>
+            {"Date: " + temp_date}
+          </Card.Title>
+          <Card.Subtitle>
+            {"Time: " + temp_time}
+          </Card.Subtitle>
+        </Card.Body>
+      </Card>
+    )
+  }
+
   render() {
     return (
     <div className="body_nopadding" style={{position: 'relative'}}>
@@ -165,18 +195,14 @@ export default class ClubDetails extends React.Component {
           <p>{this.state.club.description}</p>
           <h2>Socials</h2>
           <p>{this.state.club.socials}</p>
+          
           <h2>Upcoming Events</h2>
-          <div className="event_wrap">
-            <p className="date"> Monday, November 30th</p>
-            <div className="event_card">
-              <p className="event_title">CAD Workshop</p>
-              <div className="event_container">
-                <p className="event_info">XY</p>
-                <p className="event_info">6:30 - 7:30 PM</p>
-                <p className="event_info">Location</p>
-              </div>
-            </div>
+          <div className="card_events">
+            {this.state.events.map(this.renderCard)}
           </div>
+         
+          <h2></h2>
+          
           <h2>Comments</h2>
           {this.state.comments.map((comment, index)=> {
             return(

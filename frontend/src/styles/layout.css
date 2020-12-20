@@ -406,3 +406,9 @@
 .comment_button:focus {
   outline: none;
 }
+
+.card_events {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 25px 25px;
+}
