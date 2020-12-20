@@ -11,6 +11,7 @@ export default class ClubDetails extends React.Component {
     super(props);
     this.state = { 
       userId:[], // user's id
+      userUrl: '', // user's url
       profile_clubs: [], // the user's subscribed clubs
       profile_club_ids: [], // the user's subscribed club's id,
       club: [], // club the page is about
@@ -71,6 +72,8 @@ export default class ClubDetails extends React.Component {
         console.log(response)
         this.setState({userId: response.data[0].user.pk})
         console.log(this.state.userId)
+        this.setState({userUrl: response.data[0].url})
+        console.log(this.state.userUrl)
         this.setState({profile_clubs: response.data[0].clubs})
         console.log(this.state.profile_clubs)
         this.setState({profile_club_ids: response.data[0].club_ids})
@@ -157,6 +160,63 @@ export default class ClubDetails extends React.Component {
       </Card>
     )
   }
+  addClub(id) {
+    // adding a club to user profile
+    // creating the new club id list 
+    // (using a set that then converts to an array as to not add the same id)
+    var new_club_ids = new Set([...this.state.profile_club_ids])
+    const club_id_size = new_club_ids.size
+    new_club_ids.add(id)
+    console.log([...new_club_ids])
+    console.log(club_id_size)
+    console.log(new_club_ids.size)
+    
+    axios({
+        method: 'patch',
+        url: this.state.userUrl,
+        data: {
+            club_ids: [...new_club_ids],
+        },
+        headers: {"authorization": localStorage.getItem('token')},
+    }).then((response) => {
+        console.log("subscribed to a club:")
+        console.log(response)
+        // updating state values accordingly
+        if (club_id_size !== new_club_ids.size) {
+            this.setState({profile_clubs: response.data.clubs, profile_club_ids: response.data.club_ids})
+        }
+    }).catch(function (error) {
+        console.log(error)
+    });
+  }
+
+  removeClub(id) {
+    // adding a club to user profile
+    // creating the new list of club ids
+    var new_club_ids = []
+    for (var i = 0; i < this.state.profile_club_ids.length; i++)
+    {
+        if (this.state.profile_club_ids[i] !== id)
+            new_club_ids.push(this.state.profile_club_ids[i])
+    }
+    console.log(new_club_ids)
+    
+    axios({
+        method: 'patch',
+        url: this.state.userUrl,
+        data: {
+            club_ids: new_club_ids,
+        },
+        headers: {"authorization": localStorage.getItem('token')},
+    }).then((response) => {
+        console.log("unsubscribed from a club:")
+        console.log(response)
+        // updating state values accordingly
+        this.setState({profile_clubs: response.data.clubs, profile_club_ids: response.data.club_ids})
+    }).catch(function (error) {
+        console.log(error)
+    });
+  }
 
   render() {
     return (
@@ -187,6 +247,13 @@ export default class ClubDetails extends React.Component {
 
       <div className="headerBody" style={{padding: '32px'}}>
         <h1 className="bodyHeader">{this.state.club.name}</h1>
+        <div className="button_container">
+          <button className="search_button"  
+            style={{float: 'right', marginLeft: 'auto', color: 'black'}}
+            onClick={()=>{this.addClub(localStorage.getItem('club_id'))}}>
+              Subscribe
+          </button>
+        </div>
       </div>
           
       <div className="body" style={{paddingTop: '0px'}}>
