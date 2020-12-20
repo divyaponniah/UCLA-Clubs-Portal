@@ -83,7 +83,14 @@ export default class clubs extends React.Component {
         // log out; reset the token and usernamed cached and return to login page
         localStorage.setItem("token", "");
         localStorage.setItem("username", "");
-        window.location.href="#login";
+        window.location.href= "#login";
+    }
+
+    showClubDetail(id) {
+        // go to ./club-detail
+        // set which club will show on the club-detail page
+        localStorage.setItem("club_id", id);
+        window.location.href= "#club-details";
     }
 
     search() {
@@ -232,7 +239,7 @@ export default class clubs extends React.Component {
             >Log Out</button>
           </div>
 
-          <div className="searchbar">
+          <div className="headerBody">
             <div class="search-container">
                 <form className="search_form">
                 <input type="text" placeholder="Search.." id="club_search" onChange={()=>this.search()}/>
@@ -257,7 +264,7 @@ export default class clubs extends React.Component {
                     return(
                         <div className="club_card">
                             <div className="club_words">
-                                <h3 className="club_name">{club.name}</h3>
+                                <h1 className="club_name" onClick={()=>{this.showClubDetail(club.pk)}}>{club.name}</h1>
                                 <p className="club_description">{club.description}</p>
                             </div>
                             <button className="button" onClick={()=>{this.addClub(club.pk)}}>

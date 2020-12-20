@@ -33,6 +33,7 @@
 }
 .link:hover {
   color: #eedc79;
+  cursor: pointer;
 }
 
 /*-----------------------MENU---------------------*/
@@ -78,6 +79,7 @@
   margin: 16px 0px;
 }
 .club_link {
+  display: flex;
   color: #d0e7f9;
   width: 100%;
   margin: 8px 0px;
@@ -127,14 +129,13 @@
 
 /*---------------------LOGIN------------------*/
 .bodyHeader {
-  font-style: Mulish;
   font-weight: bold;
   font-size: 40px;
   line-height: 53px;
   color: #ffffff;
+  text-align: center;
 }
 .bodyHeader_1 {
-  font-style: Mulish;
   font-weight: bold;
   font-size: 30px;
   line-height: 44px;
@@ -147,12 +148,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 32px;
 }
 .inputTxt {
-  font-style: Mulish;
   font-size: 20px;
   line-height: 31px;
-
   color: #ffffff;
 }
 .form_input {
@@ -160,23 +160,19 @@
   border: 2px;
   padding: 16px 20px;
   width: 100%;
-
-  font-style: Mulish;
   font-size: 25px;
   line-height: 0px;
+  font-family: Mulish;
+  font-weight: 600;
 }
 .form_button {
   background-color: #0033b6;
-
   border-radius: 10px;
   border: 0px;
   padding: 20px 32px;
   margin-top: 32px;
-
-  font-style: Mulish;
   font-weight: bold;
   font-size: 25px;
-
   color: rgba(254, 253, 248, 0.8);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -189,7 +185,7 @@
 }
 
 /*-----------------------------CLUBS PAGE---------------------*/
-.searchbar {
+.headerBody {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -231,6 +227,8 @@
   font-size: 17px;
   border: none;
   flex-grow: 3;
+  font-family: Mulish;
+  font-weight: 600;
 }
 .button_container {
   padding-top: 16px;
@@ -267,6 +265,13 @@
   align-items: center;
   border-bottom: black solid 1px;
   padding: 8px;
+}
+.club_name {
+  margin-bottom: 0px;
+}
+.club_name:hover {
+  color: #1488e0;
+  cursor: pointer;
 }
 .club_words {
   flex-grow: 3;
@@ -307,23 +312,101 @@
 }
 
 .event_title {
-  font-style: Mulish;
   font-weight: bolder;
   font-size: 30px;
   color: #ffffff;
 }
 
 .event_info {
-  font-style: Mulish;
   font-weight: bolder;
   font-size: 20px;
   color: #ffffff;
 }
 
 .date {
-  font-style: Mulish;
   font-weight: bold;
   align-items: left;
   font-size: 30px;
   line-height: 44px;
+}
+
+/*-------------------------------------CLUB DETAILS--------------------------------*/
+.club_details h2 {
+  font-size: 28px;
+  text-decoration: underline;
+}
+.club_details p {
+  font-size: 18px;
+}
+
+.comment{
+  background-color: #0033b6;
+  color: white;
+  border-radius: 20px;
+  padding: 8px 24px;
+  margin: 8px;
+}
+
+.comment_form{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  margin: 8px;
+  border-radius: 20px;
+  background-color: #1488e0;
+  color: white;
+  font-size: 18px;
+  width: 80%;
+}
+.comment_form h1 {
+  font-size: 24px;
+}
+.comment_form input {
+  border-radius: 10px;
+  border: 2px;
+  padding: 8px 10px;
+  margin: 16px 0px;
+  font-size: 14px;
+  width: 80%;
+  font-family: Mulish;
+  font-weight: 600;
+}
+.comment_form textarea {
+  border-radius: 10px;
+  border: 2px;
+  padding: 8px 10px;
+  margin: 16px;
+  height: 80px;
+  width: 80%;
+  font-family: Mulish;
+  font-weight: 600;
+}
+.comment_form input:focus,
+.comment_form textarea:focus {
+  outline: none;
+}
+.comment_button {
+  background-color: #0033b6;
+  padding: 8px 16px;
+  border-radius: 3px;
+  margin-left: 16px;
+  border: none;
+  color: white;
+  width: auto;
+}
+.comment_button:hover {
+  cursor: pointer;
+  background-color: #eedc79;
+}
+.comment_button:focus {
+  outline: none;
+}
+
+.card_events {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 25px 25px;
 }

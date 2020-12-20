@@ -31,3 +31,8 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+> For first time admin:
+```
+python manage.py createsuperuser
+```
+
