@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/layout.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faCog } from "@fortawesome/free-solid-svg-icons";
+// import "../clubs.js";
 import axios from 'axios';
 
 export default class events extends React.Component {
@@ -41,6 +42,38 @@ logOut() {
     window.location.href="#login";
 }
 
+removeClub(id) {
+  // adding a club to user profile
+  // creating the new list of club ids
+  var new_club_ids = []
+  for (var i = 0; i < this.state.profile_club_ids.length; i++)
+  {
+      if (this.state.profile_club_ids[i] !== id)
+          new_club_ids.push(this.state.profile_club_ids[i])
+  }
+  console.log(new_club_ids)
+  
+  axios({
+      method: 'put',
+      url: this.state.userUrl,
+      data: {
+          club_ids: new_club_ids,
+          clubs: this.state.profile_clubs,
+          pk: this.state.pk,
+          url: this.state.userUrl,
+          user: this.state.user,
+      },
+      headers: {"authorization": localStorage.getItem('token')},
+  }).then((response) => {
+      console.log("unsubscribed from a club:")
+      console.log(response)
+      // updating state values accordingly
+      this.setState({profile_clubs: response.data.clubs, profile_club_ids: response.data.club_ids})
+  }).catch(function (error) {
+      console.log(error)
+  });
+}
+
   render() {
     return (
       <div className="body_nopadding" style={{position: 'relative'}}>
@@ -53,15 +86,14 @@ logOut() {
             </div>
             <div className="column">
                 <h2>SUBSCRIPTIONS</h2>
-                { //this.state.profile_clubs.map((club, index) => {
-                    //return(
-                        //<div className="club_link">
-                         //   <a>{club.name}</a>
-                         //   <button className="trash_button" onClick={()=>{this.removeClub(club.pk)}}><FontAwesomeIcon icon={faTrash}/></button>
-                       // </div>
-                    //)
-                //})
-                }
+                { this.state.profile_clubs.map((club, index) => {
+                    return(
+                        <div className="club_link">
+                            <a href = '#xy'> {club.name}</a>
+                            <button className="trash_button" onClick={()=>{this.removeClub(club.pk)}}><FontAwesomeIcon icon={faTrash}/></button>
+                        </div>
+                    )
+                }) }
                 <div className="club_link">
                   <a href = '#xy'>club</a>
                   <button className="trash_button"> <FontAwesomeIcon icon={faTrash}/> </button>
