@@ -114,21 +114,10 @@ removeClub(id) {
   console.log(new_club_ids)
   
   axios({
-<<<<<<< HEAD
       method: 'patch',
       url: this.state.userUrl,
       data: {
           club_ids: new_club_ids,
-=======
-      method: 'put',
-      url: this.state.userUrl,
-      data: {
-          club_ids: new_club_ids,
-          clubs: this.state.profile_clubs,
-          pk: this.state.pk,
-          url: this.state.userUrl,
-          user: this.state.user,
->>>>>>> 9ff931631df266e9edbf209e83cce236cd6e2df1
       },
       headers: {"authorization": localStorage.getItem('token')},
   }).then((response) => {
@@ -141,7 +130,6 @@ removeClub(id) {
   });
 }
 
-<<<<<<< HEAD
 whenClicked(str){
   this.setState({curr_club: str});
   localStorage.setItem("score", str);
@@ -161,9 +149,6 @@ renderCards = (card, index) => {
 }
 
 render() {
-=======
-  render() {
->>>>>>> 9ff931631df266e9edbf209e83cce236cd6e2df1
     return (
       <div className="body_nopadding" style={{position: 'relative'}}>
         <button className="menu_setting" style = {{backgroundColor: '#ffff'}} onClick={()=>{this.toggleMenu()}}><FontAwesomeIcon icon={faCog}/></button>
@@ -175,7 +160,6 @@ render() {
             </div>
             <div className="column">
                 <h2>SUBSCRIPTIONS</h2>
-<<<<<<< HEAD
                 {this.state.profile_clubs.map((club, index) => {
                     return(
                         <div className="club_link">
@@ -184,20 +168,6 @@ render() {
                         </div>
                     )
                 })}
-=======
-                { this.state.profile_clubs.map((club, index) => {
-                    return(
-                        <div className="club_link">
-                            <a href = '#xy'> {club.name}</a>
-                            <button className="trash_button" onClick={()=>{this.removeClub(club.pk)}}><FontAwesomeIcon icon={faTrash}/></button>
-                        </div>
-                    )
-                }) }
-                <div className="club_link">
-                  <a href = '#xy'>club</a>
-                  <button className="trash_button"> <FontAwesomeIcon icon={faTrash}/> </button>
-                </div>
->>>>>>> 9ff931631df266e9edbf209e83cce236cd6e2df1
             </div>
             <button className="button" 
                 style={{bottom: '0', position: 'absolute', marginBottom: '32px'}}
