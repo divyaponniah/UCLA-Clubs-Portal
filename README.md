@@ -46,10 +46,10 @@ python manage.py runserver
 # Additional Documentation & Files
 ## Figma
 ```
-https://www.figma.com/file/FCNyenRtX7VXk5l4srdhDN/CS-97-Project?node-id=0%3A1
+<https://www.figma.com/file/FCNyenRtX7VXk5l4srdhDN/CS-97-Project?node-id=0%3A1>
 ```
 ## Project Presentation Video
 ```
-https://drive.google.com/file/d/1hpbR5LDODtbMuACwvaYBLAza5dU2RHZU/view?usp=sharing 
+<https://drive.google.com/file/d/1hpbR5LDODtbMuACwvaYBLAza5dU2RHZU/view?usp=sharing/> 
 ```
 
