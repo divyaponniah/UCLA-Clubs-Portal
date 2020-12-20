@@ -11,6 +11,16 @@
 > Type this into your command line:\
 `npm start`
 
+## In case you are missing dependencies...
+> Below are how to install all the dependencies we used.
+```
+npm i react-router-dom
+npm i axios
+npm i @fortawesome/react-fontawesome
+npm i @fortawesome/free-solid-svg-icons
+npm i bootstrap
+```
+
 # Backend
 ## Create virtual environment
 ```
