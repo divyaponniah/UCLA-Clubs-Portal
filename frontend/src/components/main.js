@@ -5,7 +5,7 @@ import Login from "./login";
 import SignUp from "./signup";
 import Clubs from "./clubs";
 import Events from "./events";
-import XY from "./xy";
+import Clubevents from "./clubevents";
 
 const Main = () => {
   return (
@@ -17,7 +17,7 @@ const Main = () => {
       <Route exact path="/signup" component={SignUp}></Route>
       <Route exact path="/clubs" component={Clubs}></Route>
       <Route exact path="/events" component={Events}></Route>
-      <Route exact path="/xy" component={XY}></Route>
+      <Route exact path="/clubevents" component={Clubevents}></Route>
     </Switch>
   );
 };
